@@ -23,6 +23,13 @@ export const Projects = () => {
       techStack: ["React", "HTML", "CSS", "RESTAPIs"],
       link: "https://reactmealproject.onrender.com/",
     },
+    {
+      title: "Pharmeasy Clone",
+      description:
+        "Developed a pixel-perfect clone of the Pharmeasy website's frontend using HTML and CSS.",
+      techStack: ["React" , "HTML", "CSS"],
+      link: "https://pharmeasybykrish.netlify.app/",
+    },
   ];
 
   return (

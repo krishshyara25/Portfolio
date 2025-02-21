@@ -30,18 +30,6 @@ export const Contact = () => {
         "hO7eHMyCuC10Tmryw" // Public key
       );
   
-      // Send email to the User
-      await emailjs.send(
-        "service_1z2ebhq", // Service ID
-        "template_i35ocbq", // Template ID (for the user)
-        {
-          name: formDataObj.get("name"),
-          email: userEmail,
-          message: formDataObj.get("message"),
-        },
-        "hO7eHMyCuC10Tmryw" // Public key
-      );
-  
       setFeedback({ type: "success", message: "Message sent successfully!" });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
