@@ -1,4 +1,6 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs } from "react-icons/fa";
+import { SiMongodb, SiExpress} from "react-icons/si";
 
 export const Projects = () => {
   const projects = [
@@ -27,10 +29,20 @@ export const Projects = () => {
       title: "Pharmeasy Clone",
       description:
         "Developed a pixel-perfect clone of the Pharmeasy website's frontend using HTML and CSS.",
-      techStack: ["React" , "HTML", "CSS"],
+      techStack: ["React", "HTML", "CSS"],
       link: "https://pharmeasybykrish.netlify.app/",
     },
   ];
+
+  const techIcons = {
+    React: <FaReact className="text-blue-400" />,
+    HTML: <FaHtml5 className="text-orange-500" />,
+    CSS: <FaCss3Alt className="text-blue-500" />,
+    "Node.js": <FaNodeJs className="text-green-500" />,
+    MongoDB: <SiMongodb className="text-green-400" />,
+    Express: <SiExpress className="text-gray-400" />,
+  };
+
 
   return (
     <section
@@ -55,12 +67,13 @@ export const Projects = () => {
                   {project.techStack.map((tech, i) => (
                     <span
                       key={i}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
+                      className="flex items-center gap-2 bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
                     >
-                      {tech}
+                      {techIcons[tech]} {tech}
                     </span>
                   ))}
                 </div>
+
                 <div className="flex justify-between items-center">
                   <a
                     href={project.link}
