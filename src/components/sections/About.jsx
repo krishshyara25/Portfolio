@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGit } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiFigma, SiVite } from "react-icons/si";
+import { SiMongodb, SiExpress, SiFigma, SiVite, SiGithub, SiC, SiCplusplus } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+
 
 export const About = () => {
   const skills = [
@@ -14,6 +16,11 @@ export const About = () => {
     { name: "Git", icon: <FaGit className="text-red-500 text-2xl" /> },
     { name: "Vite", icon: <SiVite className="text-purple-500 text-2xl" /> },
     { name: "Figma", icon: <SiFigma className="text-pink-500 text-2xl" /> },
+    { name: "Github", icon: <SiGithub className="text-grey-500 text-2xl" /> },
+    { name: "VScode", icon: <VscVscode className="text-blue-500 text-2xl" /> },
+    { name: "C", icon: <SiC className="text-orange-500 text-2xl" /> },
+    { name: "C++", icon: <SiCplusplus className="text-purple-500 text-2xl" /> },
+
   ];
 
   return (
