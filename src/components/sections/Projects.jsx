@@ -1,8 +1,11 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiExpress} from "react-icons/si";
+import { SiMongodb, SiExpress } from "react-icons/si";
+import { useState } from "react";
 
 export const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const projects = [
     {
       title: "Gaming Website",
@@ -10,6 +13,8 @@ export const Projects = () => {
         "Developed a dynamic platform utilizing the MERN stack which offers popular games, incorporating both free and paid options",
       techStack: ["React", "Node.js", "MongoDB"],
       link: "https://arcadearray.netlify.app/",
+      category: "Full Stack Development",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742794931/arcadearray.netlify.app_home_praxz9.png", // Replace with actual image URL
     },
     {
       title: "JBL Clone",
@@ -17,6 +22,8 @@ export const Projects = () => {
         "Developed a pixel-perfect clone of the JBL website's frontend using HTML and CSS.",
       techStack: ["HTML", "CSS"],
       link: "https://jblclone1.netlify.app/",
+      category: "Frontend Development",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795240/localhost_5174__cfq5uo.png", // Replace with actual image URL
     },
     {
       title: "Meals Cocktails website",
@@ -24,6 +31,8 @@ export const Projects = () => {
         "Developed a modern frontend application built using React that integrates with various APIs to deliver dynamic and interactive user experiences.",
       techStack: ["React", "HTML", "CSS", "RESTAPIs"],
       link: "https://reactmealproject.onrender.com/",
+      category: "Full Stack Development",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795394/Screenshot_2025-03-24_111846_skk12h.png", // Replace with actual image URL
     },
     {
       title: "Pharmeasy Clone",
@@ -31,6 +40,35 @@ export const Projects = () => {
         "Developed a pixel-perfect clone of the Pharmeasy website's frontend using HTML and CSS.",
       techStack: ["React", "HTML", "CSS"],
       link: "https://pharmeasybykrish.netlify.app/",
+      category: "Frontend Development",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795737/Screenshot_2025-03-24_112511_yngkth.png", // Replace with actual image URL
+    },
+    {
+      title: "Trend Setter",
+      description:
+        "Sleek e-commerce UI/UX with minimalist design, easy navigation, search, cart/wishlist, and login. Stunning imagery and bold hero section for a trendy, user-friendly fashion experience.",
+      techStack: ["Figma"],
+      link: "https://www.figma.com/design/EaciITpEb7Gyau4l5l2Eb8/Trend-Setter?node-id=0-1&t=SFBI6ll67STZiOI4-1",
+      category: "UI/UX Design",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796132/Screenshot_2025-03-24_113141_d7oluw.png", // Replace with actual image URL
+    },
+    {
+      title: "IPL 2024 Points Table",
+      description:
+        "Designed a clean and visually appealing IPL 2024 Points Table in Figma, showcasing team rankings, points, and stats with a vibrant, user-friendly layout.",
+      techStack: ["Figma"],
+      link: "https://www.figma.com/design/mFh47Pq1BTXn3cL1L5ojL2/Untitled?node-id=1-2&t=qFxZioUT5ESSVB38-1", // Replace with your Figma project link
+      category: "UI/UX Design",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796253/Desktop_-_1_kzfb4l.png", // Replace with actual image URL
+    },
+    {
+      title: "Instagram Clone",
+      description:
+        "Designed a sleek Instagram clone in Figma, replicating key features like login, feed, and profile with a clean, user-friendly interface.",
+      techStack: ["Figma"],
+      link: "https://www.figma.com/design/QERB3XKPXF4HkA5r5CJIrJ/Untitled?node-id=0-1&t=bFADzjb26rYqy6OH-1", // Replace with your Figma project link
+      category: "UI/UX Design",
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796747/Screenshot_2025-03-24_114032_qpdpqe.png", // Replace with actual image URL
     },
   ];
 
@@ -43,6 +81,11 @@ export const Projects = () => {
     Express: <SiExpress className="text-gray-400" />,
   };
 
+  const categories = ["All", "Frontend Development", "UI/UX Design", "Full Stack Development"];
+
+  const filteredProjects = selectedCategory === "All" 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <section
@@ -55,37 +98,69 @@ export const Projects = () => {
             Featured Projects
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all bg-white/5 backdrop-blur-sm"
+          {/* Category Filters */}
+          <div className="flex justify-center flex-wrap gap-4 mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  selectedCategory === category
+                    ? "bg-blue-500 text-white shadow-[0_2px_8px_rgba(59,130,246,0.3)]"
+                    : "bg-white/5 text-gray-400 hover:bg-white/10"
+                }`}
               >
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="flex items-center gap-2 bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
-                    >
-                      {techIcons[tech]} {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex justify-between items-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              </div>
+                {category}
+              </button>
             ))}
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project, index) => (
+                <div
+                  key={index}
+                  className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all bg-white/5 backdrop-blur-sm"
+                >
+                  {/* Project Image */}
+                  <div className="mb-4 overflow-hidden rounded-lg">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-70 object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="flex items-center gap-2 bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
+                      >
+                        {techIcons[tech]} {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                    >
+                      View Project →
+                    </a>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-400 text-center col-span-full">
+                No projects found in this category yet.
+              </p>
+            )}
           </div>
         </div>
       </RevealOnScroll>
