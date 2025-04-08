@@ -24,7 +24,7 @@ export const About = () => {
   const education = [
     {
       level: "BTech in Computer Science",
-      institution: "Rai University",
+      institution: "Rai University X Coding Gita",
       year: "2024 - Present",
       details: "Currently pursuing a BTech in Computer Science, focusing on software development, algorithms, and web technologies.",
     },

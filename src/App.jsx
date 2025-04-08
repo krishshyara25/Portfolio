@@ -54,8 +54,8 @@ function App() {
         <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <About />
-        <Projects />
         <Showcase/>
+        <Projects />
         <Contact />
         <footer className="text-center mt-8">Portfolio by Krish Shyara</footer>
       </div>
