@@ -5,16 +5,18 @@ import { useState } from "react";
 
 export const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [hoveredIndex, setHoveredIndex] = useState(null); // For hover video preview
 
   const projects = [
     {
       title: "Gaming Website",
       description:
-        "Developed a dynamic platform utilizing the MERN stack which offers popular games, incorporating both free and paid options",
+        "Developed a dynamic platform utilizing the MERN stack which offers popular games, incorporating both free and paid options.",
       techStack: ["React", "Node.js", "MongoDB"],
       link: "https://arcadearray.netlify.app/",
       category: "Full Stack Development",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742794931/arcadearray.netlify.app_home_praxz9.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742794931/arcadearray.netlify.app_home_praxz9.png",
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1716294470/arcade_preview.mp4", // your actual video
     },
     {
       title: "JBL Clone",
@@ -23,16 +25,18 @@ export const Projects = () => {
       techStack: ["HTML", "CSS"],
       link: "https://jblclone1.netlify.app/",
       category: "Frontend Development",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795240/localhost_5174__cfq5uo.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795240/localhost_5174__cfq5uo.png",
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1716294471/jbl_preview.mp4",
     },
     {
       title: "Meals Cocktails website",
       description:
-        "Developed a modern frontend application built using React that integrates with various APIs to deliver dynamic and interactive user experiences.",
+        "A modern frontend app built using React that integrates with various APIs to deliver dynamic and interactive user experiences.",
       techStack: ["React", "HTML", "CSS", "RESTAPIs"],
       link: "https://reactmealproject.onrender.com/",
       category: "Full Stack Development",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795394/Screenshot_2025-03-24_111846_skk12h.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795394/Screenshot_2025-03-24_111846_skk12h.png",
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1750493884/Untitled_video_-_Made_with_Clipchamp_bvlnje.mp4", // no video
     },
     {
       title: "Pharmeasy Clone",
@@ -41,34 +45,36 @@ export const Projects = () => {
       techStack: ["React", "HTML", "CSS"],
       link: "https://pharmeasybykrish.netlify.app/",
       category: "Frontend Development",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795737/Screenshot_2025-03-24_112511_yngkth.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795737/Screenshot_2025-03-24_112511_yngkth.png",
+      video: "",
     },
     {
       title: "Trend Setter",
       description:
-        "Sleek e-commerce UI/UX with minimalist design, easy navigation, search, cart/wishlist, and login. Stunning imagery and bold hero section for a trendy, user-friendly fashion experience.",
+        "Sleek e-commerce UI/UX design with a trendy fashion store layout, minimalist visuals, and intuitive user flow.",
       techStack: ["Figma"],
       link: "https://www.figma.com/design/EaciITpEb7Gyau4l5l2Eb8/Trend-Setter?node-id=0-1&t=SFBI6ll67STZiOI4-1",
       category: "UI/UX Design",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796132/Screenshot_2025-03-24_113141_d7oluw.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796132/Screenshot_2025-03-24_113141_d7oluw.png",
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1750493123/Trend_Setter_c6eiyi.mp4",
     },
     {
       title: "IPL 2024 Points Table",
       description:
-        "Designed a clean and visually appealing IPL 2024 Points Table in Figma, showcasing team rankings, points, and stats with a vibrant, user-friendly layout.",
+        "Designed a clean and visually appealing IPL 2024 Points Table in Figma, with vibrant UI.",
       techStack: ["Figma"],
-      link: "https://www.figma.com/design/mFh47Pq1BTXn3cL1L5ojL2/Untitled?node-id=1-2&t=qFxZioUT5ESSVB38-1", // Replace with your Figma project link
+      link: "https://www.figma.com/design/mFh47Pq1BTXn3cL1L5ojL2/Untitled?node-id=1-2&t=qFxZioUT5ESSVB38-1",
       category: "UI/UX Design",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796253/Desktop_-_1_kzfb4l.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796253/Desktop_-_1_kzfb4l.png",
     },
     {
       title: "Instagram Clone",
       description:
-        "Designed a sleek Instagram clone in Figma, replicating key features like login, feed, and profile with a clean, user-friendly interface.",
+        "Designed a sleek Instagram clone in Figma, replicating key features like login, feed, and profile.",
       techStack: ["Figma"],
-      link: "https://www.figma.com/design/QERB3XKPXF4HkA5r5CJIrJ/Untitled?node-id=0-1&t=bFADzjb26rYqy6OH-1", // Replace with your Figma project link
+      link: "https://www.figma.com/design/QERB3XKPXF4HkA5r5CJIrJ/Untitled?node-id=0-1&t=bFADzjb26rYqy6OH-1",
       category: "UI/UX Design",
-      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796747/Screenshot_2025-03-24_114032_qpdpqe.png", // Replace with actual image URL
+      image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742796747/Screenshot_2025-03-24_114032_qpdpqe.png",
     },
   ];
 
@@ -81,11 +87,17 @@ export const Projects = () => {
     Express: <SiExpress className="text-gray-400" />,
   };
 
-  const categories = ["All", "Frontend Development", "UI/UX Design", "Full Stack Development"];
+  const categories = [
+    "All",
+    "Frontend Development",
+    "UI/UX Design",
+    "Full Stack Development",
+  ];
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section
@@ -116,24 +128,37 @@ export const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
                 <div
                   key={index}
                   className="p-4 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all bg-white/5 backdrop-blur-sm"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  {/* Project Image */}
+                  {/* Project Image or Video */}
                   <div className="mb-4 overflow-hidden rounded-lg">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-70 object-cover transition-transform duration-300 hover:scale-105"
-                    />
+                    {hoveredIndex === index && project.video ? (
+                      <video
+                        src={project.video}
+                        autoPlay
+                        muted
+                        loop
+                        className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105 rounded-lg"
+                      />
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105 rounded-lg"
+                      />
+                    )}
                   </div>
 
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-400 mb-4">{project.description}</p>
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.techStack.map((tech, i) => (
                       <span
@@ -144,6 +169,7 @@ export const Projects = () => {
                       </span>
                     ))}
                   </div>
+
                   <div className="flex justify-between items-center">
                     <a
                       href={project.link}
