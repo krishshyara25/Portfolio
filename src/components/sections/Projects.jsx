@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [hoveredIndex, setHoveredIndex] = useState(null); // For hover video preview
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const projects = [
     {
@@ -26,7 +26,7 @@ export const Projects = () => {
       link: "https://jblclone1.netlify.app/",
       category: "Frontend Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795240/localhost_5174__cfq5uo.png",
-      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1716294471/jbl_preview.mp4",
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1750497455/JBL_clone_video_e5fvcv.mp4",
     },
     {
       title: "Meals Cocktails website",
@@ -105,13 +105,13 @@ export const Projects = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
 
           {/* Category Filters */}
-          <div className="flex justify-center flex-wrap gap-4 mb-8">
+  <div className="flex justify-center flex-wrap gap-4 mb-8">
             {categories.map((category) => (
               <button
                 key={category}
@@ -128,7 +128,7 @@ export const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
                 <div

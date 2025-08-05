@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect, useRef } from "react";
-import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
@@ -10,6 +9,7 @@ import { Projects } from "./components/sections/Projects";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import { Showcase } from "./components/sections/Showcase";
+import { Certificates } from "./components/sections/Certificates";
 
 function App() {
   const [isContentLoaded, setContentLoaded] = useState(false);
@@ -56,6 +56,7 @@ function App() {
         <About />
         <Showcase/>
         <Projects />
+        <Certificates />
         <Contact />
         <footer className="text-center mt-8">Portfolio by Krish Shyara</footer>
       </div>
