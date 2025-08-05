@@ -4,12 +4,14 @@ import React from "react";
 // Import your certificate images
 import cert1 from "../../assets/certificates/ProblemSolving(Basic).png";
 import cert2 from "../../assets/certificates/RestAPI(Intermediate).png";
-import cert3 from "../../assets/certificates/React(basic).png";
+import cert7 from "../../assets/certificates/React(basic).png";
 import cert4 from "../../assets/certificates/JavaScript(Intermediate).png";
-import cert5 from "../../assets/certificates/JavaScript(basic).png";
+import cert5 from "../../assets/certificates/GithubCopilot.png";
+import cert8 from "../../assets/certificates/JavaScript(basic).png";
 import cert6 from "../../assets/certificates/Node.js(Intermediate).png";
+import cert3 from "../../assets/certificates/AzureServices.png";
 
-const certificateImages = [cert1, cert2, cert3, cert4, cert5, cert6]; // add more if needed
+const certificateImages = [cert1, cert2, cert3, cert4, cert5, cert6, cert7, cert8]; // add more if needed
 
 export const Certificates = () => {
   return (

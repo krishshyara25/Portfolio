@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import resume from "../assets/Modurn Resume.pdf"
+import resume from "../assets/Resume.pdf"; // Adjust the path to your resume file
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";

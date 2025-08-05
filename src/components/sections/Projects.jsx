@@ -16,7 +16,7 @@ export const Projects = () => {
       link: "https://arcadearray.netlify.app/",
       category: "Full Stack Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742794931/arcadearray.netlify.app_home_praxz9.png",
-      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1716294470/arcade_preview.mp4", // your actual video
+      video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1754384184/Untitled_video_-_Made_with_Clipchamp_1_ulaa8k.mp4", // your actual video
     },
     {
       title: "JBL Clone",
