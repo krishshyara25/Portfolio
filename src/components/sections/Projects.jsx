@@ -14,6 +14,7 @@ export const Projects = () => {
         "Developed a dynamic platform utilizing the MERN stack which offers popular games, incorporating both free and paid options.",
       techStack: ["React", "Node.js", "MongoDB"],
       link: "https://arcadearray.netlify.app/",
+      github: "https://github.com/krishshyara25/arcade_array",
       category: "Full Stack Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742794931/arcadearray.netlify.app_home_praxz9.png",
       video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1754384184/Untitled_video_-_Made_with_Clipchamp_1_ulaa8k.mp4", // your actual video
@@ -24,6 +25,7 @@ export const Projects = () => {
         "Developed a pixel-perfect clone of the JBL website's frontend using HTML and CSS.",
       techStack: ["HTML", "CSS"],
       link: "https://jblclone1.netlify.app/",
+      github: "https://github.com/krishshyara25/JBL",
       category: "Frontend Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795240/localhost_5174__cfq5uo.png",
       video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1750497455/JBL_clone_video_e5fvcv.mp4",
@@ -34,6 +36,7 @@ export const Projects = () => {
         "A modern frontend app built using React that integrates with various APIs to deliver dynamic and interactive user experiences.",
       techStack: ["React", "HTML", "CSS", "RESTAPIs"],
       link: "https://reactmealproject.onrender.com/",
+      github: "https://github.com/krishshyara25/ReactMealProject",
       category: "Full Stack Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795394/Screenshot_2025-03-24_111846_skk12h.png",
       video: "https://res.cloudinary.com/drno4r3vd/video/upload/v1750493884/Untitled_video_-_Made_with_Clipchamp_bvlnje.mp4", // no video
@@ -44,6 +47,7 @@ export const Projects = () => {
         "Developed a pixel-perfect clone of the Pharmeasy website's frontend using HTML and CSS.",
       techStack: ["React", "HTML", "CSS"],
       link: "https://pharmeasybykrish.netlify.app/",
+      github: "https://github.com/krishshyara25/Pharmeasy",
       category: "Frontend Development",
       image: "https://res.cloudinary.com/drno4r3vd/image/upload/v1742795737/Screenshot_2025-03-24_112511_yngkth.png",
       video: "",
@@ -106,21 +110,20 @@ export const Projects = () => {
     >
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
 
           {/* Category Filters */}
-  <div className="flex justify-center flex-wrap gap-4 mb-8">
+          <div className="flex justify-center flex-wrap gap-4 mb-8">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  selectedCategory === category
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
                     ? "bg-blue-500 text-white shadow-[0_2px_8px_rgba(59,130,246,0.3)]"
                     : "bg-white/5 text-gray-400 hover:bg-white/10"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -128,7 +131,7 @@ export const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project, index) => (
                 <div
@@ -170,16 +173,28 @@ export const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center my-4">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                      className="text-blue-400 hover:text-blue-300 transition-colors"
                     >
                       View Project →
                     </a>
+
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-gray-200 transition-colors"
+                      >
+                        GitHub ↗
+                      </a>
+                    )}
                   </div>
+
                 </div>
               ))
             ) : (
